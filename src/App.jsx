@@ -1,14 +1,31 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Typography } from "@mui/material";
+import axios from "axios";
+import DashBoard from "./components/DashBoard";
+import LoadingComp from "./components/LoadingComp";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const URL = import.meta.env.VITE_BASE_URL;
+  const [dashboardData, setDashboardData] = useState({});
+  const [Loading, setLoading] = useState(false);
 
-  return (
-    <>
-      <div>TrainIQ Task</div>
-    </>
-  )
+  const getDashboard = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.get(`${URL}`);
+      setDashboardData(data);
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getDashboard();
+  }, []);
+
+  return <>{Loading ? <LoadingComp /> : <DashBoard data={dashboardData} />}</>;
 }
 
-export default App
+export default App;
