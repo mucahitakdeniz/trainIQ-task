@@ -17,11 +17,30 @@ import SchoolIcon from '@mui/icons-material/School';
 import HomeIcon from '@mui/icons-material/Home';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import Groups2Icon from '@mui/icons-material/Groups2';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import BadgeIcon from '@mui/icons-material/Badge';
+import UpcomingOutlinedIcon from '@mui/icons-material/UpcomingOutlined';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import StarsIcon from '@mui/icons-material/Stars';
+
 
 
 
 const drawerWidth = 240;
+
+const icons = [
+  <HomeIcon />,
+  <SchoolIcon />,
+  <QueryBuilderIcon />,
+  <Groups2Icon />,
+  <WorkspacePremiumIcon />,
+  <BadgeIcon />,
+];
+const icons2 = [
+  <UpcomingOutlinedIcon />,
+  <EmojiEventsIcon />,
+  <StarsIcon />,
+];
 
 export default function Dashboard({ data }) {
   console.log(data);
@@ -63,7 +82,7 @@ export default function Dashboard({ data }) {
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {icons[index]}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
@@ -77,7 +96,7 @@ export default function Dashboard({ data }) {
                 <ListItem key={text} disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {icons2[index]}
                     </ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItemButton>
