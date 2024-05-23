@@ -21,6 +21,8 @@ import UpcomingOutlinedIcon from "@mui/icons-material/UpcomingOutlined";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import StarsIcon from "@mui/icons-material/Stars";
 import Header from "./Header";
+import CoursesInProgress from "./CoursesInProgress";
+import CoursesUpcoming from "./CoursesUpcoming";
 
 const drawerWidth = 240;
 
@@ -36,6 +38,13 @@ const icons2 = [<UpcomingOutlinedIcon />, <EmojiEventsIcon />, <StarsIcon />];
 
 export default function Dashboard({ data }) {
   console.log(data);
+
+  const coursesRef = React.useRef();
+  const handleScrollToCourses = () => {
+    if (coursesRef.current) {
+      coursesRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -73,7 +82,7 @@ export default function Dashboard({ data }) {
               "Employee",
             ].map((text, index) => (
               <ListItem key={text} disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={handleScrollToCourses}>
                   <ListItemIcon>{icons[index]}</ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
@@ -106,35 +115,42 @@ export default function Dashboard({ data }) {
           totalEmployees={data?.data?.total_employees}
           averageEmployeeScore={data?.data?.average_employee_score}
         />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
+
+        <Typography variant="p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
+          accusantium omnis tenetur dolores numquam voluptatem inventore
+          pariatur ipsa hic perspiciatis. Quaerat praesentium delectus dolore,
+          iusto incidunt harum nisi veniam illum dignissimos voluptates, quod
+          accusantium ea dolorem dolorum ab beatae alias nemo facilis quisquam
+          cumque veritatis repellat? Omnis iste voluptas quibusdam dicta impedit
+          dolores nobis eum dolorum, esse ipsa excepturi, aliquam ipsam id
+          debitis veniam, ex dolor placeat laborum. Labore quibusdam natus
+          cupiditate necessitatibus laboriosam fugit quas, commodi eius autem
+          temporibus voluptatum quam? Explicabo magnam ratione nam? Dolorum,
+          saepe quo provident quam minima quod dignissimos ipsam inventore quas
+          esse laborum voluptatibus maxime fugiat delectus fugit ipsa nihil ex
+          beatae, aut laboriosam aspernatur sit deserunt? Explicabo non eaque
+          sed quos praesentium pariatur, nam nemo impedit quod! Amet dolorem
+          illum nisi debitis a optio similique consequuntur non voluptatum quam
+          laboriosam dolores tempora aliquid placeat eius eaque obcaecati
+          officiis sed hic, repellat tempore doloribus voluptatibus ipsa! Fuga
+          consequatur natus laboriosam excepturi rem, animi, omnis sint ut
+          tempora optio doloribus at suscipit obcaecati quam molestias
+          voluptatum modi incidunt mollitia sapiente commodi nobis facilis eum
+          in enim. Unde odit ipsum nobis iusto minima dolores perferendis
+          excepturi dolorem nulla hic optio quis veritatis cum delectus
+          repellendus, ratione aliquam, sed natus ducimus repudiandae ad alias.
+          Enim dolore nulla consectetur ullam itaque? Quia nam accusantium saepe
+          cum, libero exercitationem ullam magnam vitae enim modi assumenda sint
+          incidunt reprehenderit, beatae possimus eum quibusdam pariatur
+          accusamus? Ipsa beatae non, saepe temporibus quidem consequatur vitae
+          quaerat aspernatur aliquid impedit consequuntur commodi labore.
         </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        <CoursesInProgress
+          ref={coursesRef}
+          info={data?.data?.in_progress_courses}
+        />
+        <CoursesUpcoming info={data?.data?.upcoming_courses} />
       </Box>
     </Box>
   );

@@ -22,8 +22,8 @@ const Header = ({
         justifyContent="center"
         alignItems="center"
       >
-        <Grid key={1} xs={10} sm={4} lg={3}>
-          <Card sx={{ maxWidth: 200, boxShadow: 3, minHeight: 125 }}>
+        <Grid item key={1} xs={10} sm={4} lg={3}>
+          <Card sx={{ maxWidth: 200, boxShadow: 3, borderRadius: 2,minHeight: 125 }}>
             <CardContent>
               <SchoolIcon color="success" />
               <Typography gutterBottom variant="h7" component="div">
@@ -32,8 +32,8 @@ const Header = ({
             </CardContent>
           </Card>
         </Grid>
-        <Grid key={1} xs={10} sm={5} lg={3}>
-          <Card sx={{ maxWidth: 200, boxShadow: 3, minHeight: 125 }}>
+        <Grid item key={2} xs={10} sm={5} lg={3}>
+          <Card sx={{ maxWidth: 200, boxShadow: 3,borderRadius: 2, minHeight: 125 }}>
             <CardContent>
               <GroupIcon color="secondary" />
               <Typography gutterBottom variant="h7" component="div">
@@ -42,8 +42,8 @@ const Header = ({
             </CardContent>
           </Card>
         </Grid>
-        <Grid key={1} xs={10} sm={4} lg={3}>
-          <Card sx={{ maxWidth: 200, boxShadow: 3, minHeight: 125 }}>
+        <Grid item key={3} xs={10} sm={4} lg={3}>
+          <Card sx={{ maxWidth: 200, boxShadow: 3, borderRadius: 2,minHeight: 125 }}>
             <CardContent>
               <StarIcon sx={{ color: "#ffd54f" }} />
               <Typography gutterBottom variant="h7" component="div">
