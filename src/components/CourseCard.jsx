@@ -17,22 +17,34 @@ const CourseCard = ({ info }) => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        spacing={2}
-        gap={1}
+        spacing={4}
+        margin="2rem"
       >
         {info?.map((item, i) => (
           <Grid item>
             <Card
               sx={{
-                maxWidth: 345,
+                maxWidth: 420,
+                height: 300,
                 boxShadow: 4,
                 borderRadius: 4,
                 backgroundColor:
-                  item.status === "In Progress" ? "#f3e5f5" : "#a5d6a7",
+                  item.status === "In Progress" ? "#ff9e80" : "#42a5f5",
+                padding: 2,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
               }}
             >
               <CardActionArea>
-                <CardContent>
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    gap: "1rem",
+                  }}
+                >
                   <Typography gutterBottom variant="h5" component="div">
                     {item.title}
                   </Typography>
@@ -53,7 +65,7 @@ const CourseCard = ({ info }) => {
               {item.status == "Upcoming" && (
                 <CardActions>
                   <Button size="small" color="primary">
-                    Resister
+                    Register
                   </Button>
                 </CardActions>
               )}
