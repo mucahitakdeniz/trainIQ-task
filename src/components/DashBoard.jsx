@@ -11,20 +11,16 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import SchoolIcon from '@mui/icons-material/School';
-import HomeIcon from '@mui/icons-material/Home';
-import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
-import Groups2Icon from '@mui/icons-material/Groups2';
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import BadgeIcon from '@mui/icons-material/Badge';
-import UpcomingOutlinedIcon from '@mui/icons-material/UpcomingOutlined';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import StarsIcon from '@mui/icons-material/Stars';
-
-
-
+import SchoolIcon from "@mui/icons-material/School";
+import HomeIcon from "@mui/icons-material/Home";
+import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
+import Groups2Icon from "@mui/icons-material/Groups2";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
+import BadgeIcon from "@mui/icons-material/Badge";
+import UpcomingOutlinedIcon from "@mui/icons-material/UpcomingOutlined";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import StarsIcon from "@mui/icons-material/Stars";
+import Header from "./Header";
 
 const drawerWidth = 240;
 
@@ -36,14 +32,11 @@ const icons = [
   <WorkspacePremiumIcon />,
   <BadgeIcon />,
 ];
-const icons2 = [
-  <UpcomingOutlinedIcon />,
-  <EmojiEventsIcon />,
-  <StarsIcon />,
-];
+const icons2 = [<UpcomingOutlinedIcon />, <EmojiEventsIcon />, <StarsIcon />];
 
 export default function Dashboard({ data }) {
   console.log(data);
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -81,9 +74,7 @@ export default function Dashboard({ data }) {
             ].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
-                  <ListItemIcon>
-                    {icons[index]}
-                  </ListItemIcon>
+                  <ListItemIcon>{icons[index]}</ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
               </ListItem>
@@ -95,9 +86,7 @@ export default function Dashboard({ data }) {
               (text, index) => (
                 <ListItem key={text} disablePadding>
                   <ListItemButton>
-                    <ListItemIcon>
-                    {icons2[index]}
-                    </ListItemIcon>
+                    <ListItemIcon>{icons2[index]}</ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItemButton>
                 </ListItem>
@@ -106,8 +95,17 @@ export default function Dashboard({ data }) {
           </List>
         </Box>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 2, p: 1 }}>
         <Toolbar />
+        <Typography variant="h3" color="primary" display="flex">
+          Welcome To Demo TrainIQ
+        </Typography>
+
+        <Header
+          totalCompletedCourses={data?.data?.total_completed_courses}
+          totalEmployees={data?.data?.total_employees}
+          averageEmployeeScore={data?.data?.average_employee_score}
+        />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
