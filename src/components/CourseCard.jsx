@@ -21,7 +21,7 @@ const CourseCard = ({ info }) => {
         margin="2rem"
       >
         {info?.map((item, i) => (
-          <Grid item>
+          <Grid key={i} item>
             <Card
               sx={{
                 maxWidth: 420,

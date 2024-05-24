@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 
 const ActivityHours = ({ info }) => {
-  console.log("info", info);
   return (
     <>
       <Typography variant="h4" color="#1de9b6" display="flex">

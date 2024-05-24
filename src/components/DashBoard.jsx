@@ -24,6 +24,9 @@ import Header from "./Header";
 import CoursesInProgress from "./CoursesInProgress";
 import CoursesUpcoming from "./CoursesUpcoming";
 import ActivityHours from "./ActivityHours";
+import Teams from "./Teams";
+import TopList from "./TopList";
+import TopEmployees from "./TopEmployees";
 
 const drawerWidth = 240;
 
@@ -34,8 +37,9 @@ const icons = [
   <Groups2Icon />,
   <WorkspacePremiumIcon />,
   <BadgeIcon />,
+  <UpcomingOutlinedIcon />,
 ];
-const icons2 = [<UpcomingOutlinedIcon />, <EmojiEventsIcon />, <StarsIcon />];
+const icons2 = [, <EmojiEventsIcon />, <StarsIcon />];
 
 export default function Dashboard({ data }) {
   console.log(data);
@@ -81,6 +85,7 @@ export default function Dashboard({ data }) {
               "Teams",
               "Skills",
               "Employee",
+              "Upcoming Course",
             ].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton onClick={handleScrollToCourses}>
@@ -91,18 +96,7 @@ export default function Dashboard({ data }) {
             ))}
           </List>
           <Divider />
-          <List>
-            {["Upcoming Course", "Top Skills", "Top Employees"].map(
-              (text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>{icons2[index]}</ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              )
-            )}
-          </List>
+          <TopEmployees info={data?.data?.top_employees} />
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 2, p: 1 }}>
@@ -116,6 +110,7 @@ export default function Dashboard({ data }) {
           totalEmployees={data?.data?.total_employees}
           averageEmployeeScore={data?.data?.average_employee_score}
         />
+        <TopList />
 
         <CoursesInProgress
           ref={coursesRef}
@@ -124,6 +119,7 @@ export default function Dashboard({ data }) {
         <CoursesUpcoming info={data?.data?.upcoming_courses} />
 
         <ActivityHours info={data?.data?.activity_hours} />
+        <Teams info={data?.data?.teams} />
       </Box>
     </Box>
   );
