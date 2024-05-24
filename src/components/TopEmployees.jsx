@@ -1,50 +1,34 @@
-import {
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
+import { Box, Card, Typography } from "@mui/material";
+import React from "react";
+import StarIcon from "@mui/icons-material/Star";
 
 const TopEmployees = ({ info }) => {
-  const [show, setShow] = useState(null);
-
-  const handleClick = (name) => {
-    setShow(name);
-  };
   return (
-    <>
-      <div>TopEmployees</div>
-
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        {info?.map((value) => (
-          <>
-            <ListItem
-              key={value}
-              disablePadding
-              onClick={() => handleClick(value.name)}
-            >
-              {value.name}
-            </ListItem>
-            {value.name === show && (
-              <ListItem>
-                <Typography variant="body1" color="text.secondary">
-                  {value.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  Current Score: {value.current_score}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  email: {value.email}
-                </Typography>
-                
-              </ListItem>
-            )}
-          </>
-        ))}
-      </List>
-    </>
+    <Box
+      sx={{
+        display: "flex",
+        gap: "2rem",
+        justifyContent: "flex-start",
+      }}
+    >
+      {info?.map((value, index) => (
+        <Card
+          key={index}
+          sx={{ p: 2.5, height: 140, width: 250, boxShadow: 4 }}
+        >
+          <Typography gutterBottom variant="body1" color="success.main">
+            {value.title}
+          </Typography>
+          <Typography gutterBottom variant="body1">
+            <StarIcon sx={{ color: "#e7b81b" }} /> Current Score:
+            {value.current_score}
+          </Typography>
+          <Typography gutterBottom variant="body1">
+            {value.email}
+          </Typography>
+        </Card>
+      ))}
+    </Box>
   );
 };
 

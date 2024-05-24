@@ -25,10 +25,8 @@ import CoursesInProgress from "./CoursesInProgress";
 import CoursesUpcoming from "./CoursesUpcoming";
 import ActivityHours from "./ActivityHours";
 import Teams from "./Teams";
-import TopList from "./TopList";
-import TopEmployees from "./TopEmployees";
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const icons = [
   <HomeIcon />,
@@ -96,7 +94,6 @@ export default function Dashboard({ data }) {
             ))}
           </List>
           <Divider />
-          <TopEmployees info={data?.data?.top_employees} />
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 2, p: 1 }}>
@@ -109,8 +106,9 @@ export default function Dashboard({ data }) {
           totalCompletedCourses={data?.data?.total_completed_courses}
           totalEmployees={data?.data?.total_employees}
           averageEmployeeScore={data?.data?.average_employee_score}
+          topEmployees={data?.data?.top_employees}
+          topSkills={data?.data?.top_skills}
         />
-        <TopList />
 
         <CoursesInProgress
           ref={coursesRef}
