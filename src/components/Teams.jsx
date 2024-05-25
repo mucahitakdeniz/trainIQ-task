@@ -4,7 +4,6 @@ import GroupIcon from "@mui/icons-material/Group";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
-
 import React, { useState } from "react";
 import EmployeeCard from "./EmployeeCard";
 
@@ -57,7 +56,7 @@ const Teams = ({ info }) => {
           <Card
             key={index}
             sx={{
-              width: "90%",
+              width: "95%",
               display: "flex",
               flexDirection: "column",
               gap: 1,

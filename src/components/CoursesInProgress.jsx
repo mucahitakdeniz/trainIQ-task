@@ -1,16 +1,16 @@
 import { Box, Typography } from "@mui/material";
-import React, { forwardRef } from "react";
+import React from "react";
 import CourseCard from "./CourseCard";
 
-const CoursesInProgress = forwardRef(({ info }, ref) => {
+const CoursesInProgress = ({ info }) => {
   return (
-    <Box sx={{ p: 1, marginTop: 2}}>
-      <Typography ref={ref} variant="h4" color="#ba000d" display="flex">
+    <Box sx={{ p: 1, marginTop: 2 }}>
+      <Typography variant="h4" color="#ba000d" display="flex">
         In Progress Courses
       </Typography>
       <CourseCard info={info} />
     </Box>
-  )
-})
+  );
+};
 
 export default CoursesInProgress;

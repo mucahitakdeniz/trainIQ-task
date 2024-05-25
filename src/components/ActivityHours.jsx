@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React  from "react";
 
 const ActivityHours = ({ info }) => {
   return (
@@ -13,7 +13,7 @@ const ActivityHours = ({ info }) => {
         flexWrap="wrap"
         justifyContent="center"
         alignItems="center"
-        gap={2}
+        gap={2} 
       >
         {info?.map((item, i) => (
           <Box
@@ -49,6 +49,6 @@ const ActivityHours = ({ info }) => {
       </Box>
     </>
   );
-};
+}
 
 export default ActivityHours;
