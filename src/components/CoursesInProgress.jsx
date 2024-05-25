@@ -4,7 +4,7 @@ import CourseCard from "./CourseCard";
 
 const CoursesInProgress = forwardRef(({ info }, ref) => {
   return (
-    <Box>
+    <Box sx={{ p: 1, marginTop: 2}}>
       <Typography ref={ref} variant="h4" color="#ba000d" display="flex">
         In Progress Courses
       </Typography>

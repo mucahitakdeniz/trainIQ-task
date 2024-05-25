@@ -24,11 +24,11 @@ const CourseCard = ({ info }) => {
           <Grid key={i} item>
             <Card
               sx={{
-                width: 300,
-                minHeight: 200,
+                width: 280,
+                height: 200,
                 boxShadow: 4,
-                backgroundColor:
-                  item.status === "In Progress" ? "#ff9e80" : "#42a5f5",
+                backgroundColor:"#323233",
+                color:"white",
                 padding: 1,
                 display: "flex",
                 flexDirection: "row",
@@ -36,32 +36,30 @@ const CourseCard = ({ info }) => {
                   item.status === "In Progress" ? "flex-start" : "flex-end",
               }}
             >
-              <CardActionArea>
                 <CardContent
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    gap: "0.3rem",
+                    gap: "0.1rem",
                   }}
                 >
                   <Typography gutterBottom variant="h6" component="div">
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" >
                     {item.description}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" >
                     Educator: {item.assigned_to}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" >
                     Due date:{" "}
                     {`${new Date(item.due_date).getDate()}/${
                       new Date(item.due_date).getMonth() + 1
                     }/${new Date(item.due_date).getFullYear()}`}
                   </Typography>
                 </CardContent>
-              </CardActionArea>
             </Card>
           </Grid>
         ))}

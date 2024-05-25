@@ -6,7 +6,7 @@ const CoursesUpcoming = ({ info }) => {
   return (
     <Box>
       <Typography 
-       variant="h4" color="#1de9b6" display="flex">
+       variant="h4" color="#ba000d" display="flex">
         Upcoming Courses
       </Typography>
       <CourseCard info={info} />

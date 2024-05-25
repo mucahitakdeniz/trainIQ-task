@@ -25,6 +25,7 @@ import CoursesInProgress from "../components/CoursesInProgress";
 import CoursesUpcoming from "../components/CoursesUpcoming";
 import ActivityHours from "../components/ActivityHours";
 import Teams from "../components/Teams";
+import SkillsInDevelopment from "../components/SkillsInDevelopment";
 
 const drawerWidth = 300;
 
@@ -108,14 +109,12 @@ export default function Dashboard({ data }) {
           topEmployees={data?.data?.top_employees}
           topSkills={data?.data?.top_skills}
         />
-        <Box sx={{ boxShadow: 4, borderRadius: 4,backgroundColor:"#e018e01f3",p:2, marginTop:2 }}>
-          <CoursesInProgress
-            ref={coursesRef}
-            info={data?.data?.in_progress_courses}
-          />
-          <CoursesUpcoming info={data?.data?.upcoming_courses} />
-        </Box>
-
+        <CoursesInProgress
+          ref={coursesRef}
+          info={data?.data?.in_progress_courses}
+        />
+        <CoursesUpcoming info={data?.data?.upcoming_courses} />
+        <SkillsInDevelopment info={data?.data?.skills_in_development} />
         <ActivityHours info={data?.data?.activity_hours} />
         <Teams info={data?.data?.teams} />
       </Box>
