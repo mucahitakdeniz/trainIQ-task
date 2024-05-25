@@ -24,19 +24,18 @@ import Teams from "../components/Teams";
 import SkillsInDevelopment from "../components/SkillsInDevelopment";
 import Contact from "../components/Contact";
 
-const drawerWidth = 300;
+const DashBoard = ({ data }) => {
+  const drawerWidth = 300;
 
-const icons = [
-  <SchoolIcon sx={{ color: "primary.main" }} />,
-  <QueryBuilderIcon sx={{ color: "warning.main" }} />,
-  <Groups2Icon sx={{ color: "secondary.main" }} />,
-  <WorkspacePremiumIcon sx={{ color: "warning.main" }} />,
-  <UpcomingOutlinedIcon sx={{ color: "info.main" }} />,
-  <EmailIcon sx={{ color: "success.main" }} />,
-];
+  const icons = [
+    <SchoolIcon sx={{ color: "primary.main" }} />,
+    <QueryBuilderIcon sx={{ color: "warning.main" }} />,
+    <Groups2Icon sx={{ color: "secondary.main" }} />,
+    <WorkspacePremiumIcon sx={{ color: "warning.main" }} />,
+    <UpcomingOutlinedIcon sx={{ color: "info.main" }} />,
+    <EmailIcon sx={{ color: "success.main" }} />,
+  ];
 
-export default function DashBoard({ data }) {
-  
   const coursesRef = React.useRef(null);
   const activeHourseRef = React.useRef(null);
   const teamsRef = React.useRef(null);
@@ -134,4 +133,6 @@ export default function DashBoard({ data }) {
       </Box>
     </Box>
   );
-}
+};
+
+export default DashBoard;

@@ -3,10 +3,9 @@ import "./App.css";
 import { Box } from "@mui/material";
 import axios from "axios";
 import DashBoard from "./pages/DashBoard";
-import LoadingPage from "./pages/LoadingPage";
+import Loading from "./pages/Loading";
 
 function App() {
-  
   const URL = import.meta.env.VITE_BASE_URL;
   const [dashboardData, setDashboardData] = useState({});
   const [loading, setLoading] = useState(false);
@@ -27,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Box>{loading ? <LoadingPage/> : <DashBoard data={dashboardData} />}</Box>
+    <Box> {loading ? <Loading /> : <DashBoard data={dashboardData} />} </Box>
   );
 }
 
