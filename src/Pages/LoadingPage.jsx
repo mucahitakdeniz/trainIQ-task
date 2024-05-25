@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 const LoadingPage = () => {
+  
   return (
     <Box
       sx={{

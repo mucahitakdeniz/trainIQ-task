@@ -6,6 +6,7 @@ import DashBoard from "./pages/DashBoard";
 import LoadingPage from "./pages/LoadingPage";
 
 function App() {
+  
   const URL = import.meta.env.VITE_BASE_URL;
   const [dashboardData, setDashboardData] = useState({});
   const [loading, setLoading] = useState(false);
