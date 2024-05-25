@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import axios from "axios";
-import DashBoard from "./components/DashBoard";
-import LoadingComp from "./components/LoadingComp";
+import LoadingPage from "./Pages/LoadingPage";
+import Dashboard from "./Pages/DashBoard";
 
 function App() {
   const URL = import.meta.env.VITE_BASE_URL;
@@ -25,7 +25,9 @@ function App() {
     getDashboard();
   }, []);
 
-  return <>{Loading ? <LoadingComp /> : <DashBoard data={dashboardData} />}</>;
+  return (
+    <Box>{Loading ? <LoadingPage /> : <Dashboard data={dashboardData} />}</Box>
+  );
 }
 
 export default App;

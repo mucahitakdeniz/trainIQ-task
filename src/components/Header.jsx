@@ -17,7 +17,7 @@ const Header = ({
   return (
     <Grid container spacing={2} sx={{marginTop:3}}>
       <Grid item xs={12} display="flex" height="8%" flexWrap="wrap" gap={2}>
-        <Card sx={{ boxShadow: 3, minHeight: 125, width: "11rem" }}>
+        <Card sx={{ boxShadow: 3, minHeight: 125, width: 180 }}>
           <CardContent>
             <SchoolIcon color="success" />
             <Typography gutterBottom variant="h7" component="div">
@@ -26,7 +26,7 @@ const Header = ({
           </CardContent>
         </Card>
         <Card
-          sx={{ minWidth: 200, width: "11rem", boxShadow: 3, minHeight: 125 }}
+          sx={{ minWidth: 180, width: 180, boxShadow: 3, height: 125 }}
         >
           <CardContent>
             <GroupIcon color="secondary" />
@@ -36,7 +36,7 @@ const Header = ({
           </CardContent>
         </Card>
         <Card
-          sx={{ minWidth: 200, width: "11rem", boxShadow: 3, minHeight: 125 }}
+          sx={{ minWidth: 200, width: 180, boxShadow: 3, minHeight: 125 }}
         >
           <CardContent>
             <StarIcon sx={{ color: "#ffd54f" }} />

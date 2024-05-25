@@ -17,23 +17,23 @@ const CourseCard = ({ info }) => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        spacing={4}
-        margin="2rem"
+        spacing={2}
+        margin="0.4rem"
       >
         {info?.map((item, i) => (
           <Grid key={i} item>
             <Card
               sx={{
-                maxWidth: 420,
-                height: 300,
+                width: 300,
+                minHeight: 200,
                 boxShadow: 4,
-                borderRadius: 4,
                 backgroundColor:
                   item.status === "In Progress" ? "#ff9e80" : "#42a5f5",
-                padding: 2,
+                padding: 1,
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
+                flexDirection: "row",
+                alignItems:
+                  item.status === "In Progress" ? "flex-start" : "flex-end",
               }}
             >
               <CardActionArea>
@@ -42,19 +42,19 @@ const CourseCard = ({ info }) => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    gap: "1rem",
+                    gap: "0.3rem",
                   }}
                 >
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="h6" component="div">
                     {item.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {item.description}
                   </Typography>
-                  <Typography variant="body1" color="text.secondary">
+                  <Typography variant="body2" color="text.secondary">
                     Educator: {item.assigned_to}
                   </Typography>
-                  <Typography variant="body1" color="text.secondary">
+                  <Typography variant="body2" color="text.secondary">
                     Due date:{" "}
                     {`${new Date(item.due_date).getDate()}/${
                       new Date(item.due_date).getMonth() + 1
@@ -62,13 +62,6 @@ const CourseCard = ({ info }) => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              {item.status == "Upcoming" && (
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Register
-                  </Button>
-                </CardActions>
-              )}
             </Card>
           </Grid>
         ))}

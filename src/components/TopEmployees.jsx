@@ -15,6 +15,7 @@ const TopEmployees = ({ info }) => {
           justifyContent: "center",
           marginTop: "1rem",
           marginBottom: "2rem",
+          marginLeft: "3rem",
         }}
       >
         {info?.map((value, index) => (
@@ -23,8 +24,8 @@ const TopEmployees = ({ info }) => {
             sx={{
               p: 2,
               MinHeight: 140,
-              width: 200,
-              minWidth: 200,
+              width: 180,
+              minWidth: 180,
               boxShadow: 4,
             }}
           >

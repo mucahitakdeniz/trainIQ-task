@@ -20,11 +20,11 @@ import BadgeIcon from "@mui/icons-material/Badge";
 import UpcomingOutlinedIcon from "@mui/icons-material/UpcomingOutlined";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import StarsIcon from "@mui/icons-material/Stars";
-import Header from "./Header";
-import CoursesInProgress from "./CoursesInProgress";
-import CoursesUpcoming from "./CoursesUpcoming";
-import ActivityHours from "./ActivityHours";
-import Teams from "./Teams";
+import Header from "../components/Header";
+import CoursesInProgress from "../components/CoursesInProgress";
+import CoursesUpcoming from "../components/CoursesUpcoming";
+import ActivityHours from "../components/ActivityHours";
+import Teams from "../components/Teams";
 
 const drawerWidth = 300;
 
@@ -37,7 +37,6 @@ const icons = [
   <BadgeIcon />,
   <UpcomingOutlinedIcon />,
 ];
-const icons2 = [, <EmojiEventsIcon />, <StarsIcon />];
 
 export default function Dashboard({ data }) {
   console.log(data);
@@ -96,7 +95,7 @@ export default function Dashboard({ data }) {
           <Divider />
         </Box>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 2, p: 1 }}>
+      <Box component="main" sx={{ flexGrow: 2, p: 1.5 }}>
         <Toolbar />
         <Typography variant="h3" color="primary" display="flex">
           Welcome To Demo TrainIQ
@@ -109,12 +108,13 @@ export default function Dashboard({ data }) {
           topEmployees={data?.data?.top_employees}
           topSkills={data?.data?.top_skills}
         />
-
-        <CoursesInProgress
-          ref={coursesRef}
-          info={data?.data?.in_progress_courses}
-        />
-        <CoursesUpcoming info={data?.data?.upcoming_courses} />
+        <Box sx={{ boxShadow: 4, borderRadius: 4,backgroundColor:"#e018e01f3",p:2, marginTop:2 }}>
+          <CoursesInProgress
+            ref={coursesRef}
+            info={data?.data?.in_progress_courses}
+          />
+          <CoursesUpcoming info={data?.data?.upcoming_courses} />
+        </Box>
 
         <ActivityHours info={data?.data?.activity_hours} />
         <Teams info={data?.data?.teams} />
