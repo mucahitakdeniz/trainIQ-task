@@ -15,32 +15,28 @@ const Header = ({
   topSkills,
 }) => {
   return (
-    <Grid container spacing={2} sx={{marginTop:3}}>
+    <Grid container spacing={2} sx={{ marginTop: 3 }}>
       <Grid item xs={12} display="flex" height="8%" flexWrap="wrap" gap={2}>
         <Card sx={{ boxShadow: 3, minHeight: 125, width: 180 }}>
           <CardContent>
             <SchoolIcon color="success" />
-            <Typography gutterBottom variant="h7" component="div">
+            <Typography variant="body1" component="div">
               Total Completed Courses: {totalCompletedCourses}
             </Typography>
           </CardContent>
         </Card>
-        <Card
-          sx={{ minWidth: 180, width: 180, boxShadow: 3, height: 125 }}
-        >
+        <Card sx={{ minWidth: 180, width: 180, boxShadow: 3, height: 125 }}>
           <CardContent>
             <GroupIcon color="secondary" />
-            <Typography gutterBottom variant="h7" component="div">
+            <Typography variant="body1" component="div">
               Total Employees: {totalEmployees}
             </Typography>
           </CardContent>
         </Card>
-        <Card
-          sx={{ minWidth: 200, width: 180, boxShadow: 3, minHeight: 125 }}
-        >
+        <Card sx={{ minWidth: 200, width: 180, boxShadow: 3, minHeight: 125 }}>
           <CardContent>
             <StarIcon sx={{ color: "#ffd54f" }} />
-            <Typography gutterBottom variant="h7" component="div">
+            <Typography variant="body1" component="div">
               Average Employee Score {averageEmployeeScore}
             </Typography>
           </CardContent>

@@ -4,7 +4,7 @@ import React from "react";
 const ActivityHours = ({ info }) => {
   return (
     <>
-      <Typography variant="h4" color="#1de9b6" display="flex">
+      <Typography variant="h4" color="#ba000d" display="flex" marginY={2}>
         Activity Hours
       </Typography>
 
@@ -18,30 +18,27 @@ const ActivityHours = ({ info }) => {
         {info?.map((item, i) => (
           <Box
             key={i}
-            height={180}
-            width={220}
-            my={4}
+            height={120}
+            width={210}
             display="flex"
             alignItems="center"
             flexDirection="column"
-            gap={2}
+            gap={1}
             p={1}
             sx={{
-              border: "6px solid #ab47bc",
-              borderRadius: 5,
-              background: "#f06292",
+              backgroundColor: "#323233",
+              color: "white",
+              boxShadow: "0px 2px 4px 1px rgba(255, 255, 255, 0.5)",
             }}
           >
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2">
               Completed Exams: {item?.exams_completed}
             </Typography>
-            <Typography variant="body1" color="text.secondary">
-              Hours: {item?.hours}
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
+            <Typography variant="body2">Hours: {item?.hours}</Typography>
+            <Typography variant="body2">
               lessons learned: {item?.lessons_taken}
             </Typography>
-            <Typography variant="body1" color="text.secondary">
+            <Typography variant="body2">
               Due date:{" "}
               {`${new Date(item.date).getDate()}/${
                 new Date(item.date).getMonth() + 1

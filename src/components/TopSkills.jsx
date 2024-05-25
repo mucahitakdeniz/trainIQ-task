@@ -1,6 +1,6 @@
 import { Box, Card, Typography } from "@mui/material";
 import React from "react";
-import SkilsCard from "./SkilsCard";
+import SkilsCard from "./SkillsCard";
 
 const TopSkills = ({ info }) => {
   return (
@@ -13,9 +13,7 @@ const TopSkills = ({ info }) => {
         gap: 2,
       }}
     >
-      {info?.map((skills, i) => (
-        <SkilsCard skills={skills} i={i} />
-      ))}
+      <SkilsCard skills={info} />
     </Box>
   );
 };
