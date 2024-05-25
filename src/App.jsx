@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Box } from "@mui/material";
 import axios from "axios";
-import LoadingPage from "./pages/LoadingPage";
+import LoadingPage from './pages/LoadingPage';
 import DashBoard from "./pages/DashBoard";
 
 function App() {
