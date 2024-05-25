@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Box } from "@mui/material";
 import axios from "axios";
-import Loading from "./pages/Loading";
 import DashBoard from "./pages/DashBoard";
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
   const URL = import.meta.env.VITE_BASE_URL;
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Box>{loading ? <Loading /> : <DashBoard data={dashboardData} />}</Box>
+    <Box>{loading ? <LoadingPage/> : <DashBoard data={dashboardData} />}</Box>
   );
 }
 

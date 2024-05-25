@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
 
-const Loading = () => {
+const LoadingPage = () => {
   return (
     <Box
       sx={{
@@ -20,4 +19,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingPage;
