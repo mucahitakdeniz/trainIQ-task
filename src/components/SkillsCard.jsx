@@ -8,7 +8,7 @@ const SkillsCard = ({ skills }) => {
         <Card
           key={i}
           sx={{
-            width: 200,
+            width: 250,
           }}
         >
           <Typography variant="h8">{skill.skill}</Typography>

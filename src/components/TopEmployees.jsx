@@ -10,12 +10,10 @@ const TopEmployees = ({ info }) => {
       <Box
         sx={{
           display: "flex",
-          flexWrap: "Wrap",
+          flexDirection: "column",
           gap: 1,
           justifyContent: "center",
-          marginTop: "1rem",
-          marginBottom: "2rem",
-          marginLeft: "3rem",
+          alignItems: "center",
         }}
       >
         {info?.map((value, index) => (
@@ -23,8 +21,8 @@ const TopEmployees = ({ info }) => {
             key={index}
             sx={{
               p: 2,
-              MinHeight: 140,
-              width: 180,
+              height: 100,
+              width: 250,
               minWidth: 180,
               boxShadow: 4,
             }}
