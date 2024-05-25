@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import axios from "axios";
-import LoadingPage from "./Pages/LoadingPage";
-import Dashboard from "./Pages/DashBoard";
+import LoadingPage from "./pages/LoadingPage";
+import Dashboard from "./pages/DashBoard";
 
 function App() {
   const URL = import.meta.env.VITE_BASE_URL;

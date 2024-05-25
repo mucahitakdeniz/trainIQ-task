@@ -1,8 +1,43 @@
-# React + Vite
+TrainIQ-Task/
+├── node_modules/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ ├── pages/
+│ ├── App.jsx
+│ └── main.jsx
+├── .env
+├── .gitignore
+├── eslintrc.cjs
+├── index.html
+├── package.json
+├── README.md
+├── vite.config.js
+└── yarn.lock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Vite-React Project
 
-Currently, two official plugins are available:
+This project is a web application built using [Vite](https://vitejs.dev/) and [React](https://reactjs.org/). The project leverages the advantages of Vite for fast development and build times.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Setup
+
+### Requirements
+
+- [Node.js](https://nodejs.org/) (>=14.18.0)
+- [Yarn](https://yarnpkg.com/) package manager
+
+### Getting Started
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/mucahitakdeniz/trainIQ-task.git
+   cd project-name
+   ```
+
+2. **Install**
+   yarn install
+3. **Start the development server**
+   yarn dev
+
+###
