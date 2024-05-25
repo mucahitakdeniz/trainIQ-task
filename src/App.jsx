@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Box } from "@mui/material";
 import axios from "axios";
-import LoadingPage from './pages/LoadingPage';
+import Loading from "./pages/Loading";
 import DashBoard from "./pages/DashBoard";
 
 function App() {
   const URL = import.meta.env.VITE_BASE_URL;
   const [dashboardData, setDashboardData] = useState({});
-  const [Loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const getDashboard = async () => {
     try {
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Box>{Loading ? <LoadingPage /> : <DashBoard data={dashboardData} />}</Box>
+    <Box>{loading ? <Loading /> : <DashBoard data={dashboardData} />}</Box>
   );
 }
 
