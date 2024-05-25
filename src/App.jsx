@@ -3,7 +3,7 @@ import "./App.css";
 import { Box } from "@mui/material";
 import axios from "axios";
 import LoadingPage from "./pages/LoadingPage";
-import Dashboard from "./pages/DashBoard";
+import DashBoard from "./pages/DashBoard";
 
 function App() {
   const URL = import.meta.env.VITE_BASE_URL;
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Box>{Loading ? <LoadingPage /> : <Dashboard data={dashboardData} />}</Box>
+    <Box>{Loading ? <LoadingPage /> : <DashBoard data={dashboardData} />}</Box>
   );
 }
 

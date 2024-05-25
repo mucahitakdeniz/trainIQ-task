@@ -35,7 +35,7 @@ const icons = [
   <EmailIcon sx={{ color: "success.main" }} />,
 ];
 
-export default function Dashboard({ data }) {
+export default function DashBoard({ data }) {
   const coursesRef = React.useRef(null);
   const activeHourseRef = React.useRef(null);
   const teamsRef = React.useRef(null);
