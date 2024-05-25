@@ -27,12 +27,12 @@ import Contact from "../components/Contact";
 const drawerWidth = 300;
 
 const icons = [
-  <SchoolIcon />,
-  <QueryBuilderIcon />,
-  <Groups2Icon />,
-  <WorkspacePremiumIcon />,
-  <UpcomingOutlinedIcon />,
-  <EmailIcon />,
+  <SchoolIcon sx={{ color: "primary.main" }} />,
+  <QueryBuilderIcon sx={{ color: "warning.main" }} />,
+  <Groups2Icon sx={{ color: "secondary.main" }} />,
+  <WorkspacePremiumIcon sx={{ color: "warning.main" }} />,
+  <UpcomingOutlinedIcon sx={{ color: "info.main" }} />,
+  <EmailIcon sx={{ color: "success.main" }} />,
 ];
 
 export default function Dashboard({ data }) {
@@ -129,7 +129,7 @@ export default function Dashboard({ data }) {
         <ActivityHours info={data?.data?.activity_hours} />
         <Teams info={data?.data?.teams} />
         <Contact sx={{ marginY: 15 }} />
-        <Box  ref={contactRef} />
+        <Box ref={contactRef} />
       </Box>
     </Box>
   );

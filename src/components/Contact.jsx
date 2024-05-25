@@ -12,7 +12,16 @@ const Contact = () => {
       <Typography variant="h4" color="#ba000d" display="flex" marginTop={2}>
         Contact
       </Typography>
-      <Card sx={{ width: "95%", boxShadow: 4, margin: "auto", p: 1 }}>
+      <Card
+        sx={{
+          width: "95%",
+          boxShadow: 2,
+          margin: "auto",
+          p: 1,
+          backgroundColor: "#2f2f30",
+          color: "#bababe",
+        }}
+      >
         <Typography variant="h6" display="flex" p={2}>
           Demo TrainIQ
         </Typography>
@@ -36,7 +45,10 @@ const Contact = () => {
           <Link target="_blank" href="https://x.com/">
             <XIcon sx={{ color: "text.primary", fontSize: "1.8rem" }} />
           </Link>
-          <Link target="_blank" href="https://www.youtube.com/?ysclid=lwmggevncx319823064">
+          <Link
+            target="_blank"
+            href="https://www.youtube.com/?ysclid=lwmggevncx319823064"
+          >
             <YouTubeIcon sx={{ color: "error.main", fontSize: "2.3rem" }} />
           </Link>
           <Link target="_blank" href="https://www.linkedin.com/">
